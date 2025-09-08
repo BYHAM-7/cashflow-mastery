@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashFlow Mastery 2.0 - Easy Money Secrets</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0e0e0e;
+      color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: #00ffcc;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .bar-container {
+      width: 100%;
+      max-width: 400px;
+      background: #222;
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 20px 0;
+      height: 30px;
+      box-shadow: 0 0 10px rgba(0,255,200,0.4);
+    }
+
+    .bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #00ffcc, #0077ff);
+      transition: width 1s;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-style: italic;
+      min-height: 20px;
+      color: #ccc;
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      background: #1a1a1a;
+      color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      display: none;
+      z-index: 9999;
+      animation: popupIn 0.5s forwards;
+      max-width: 90%;
+    }
+
+    @keyframes popupIn {
+      from {transform: translate(-50%, -50%) scale(0.5); opacity: 0;}
+      to {transform: translate(-50%, -50%) scale(1); opacity: 1;}
+    }
+
+    .popup h2 {
+      margin-bottom: 10px;
+      color: #ff5555;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Ad Placeholder */
+    .ad-box {
+      margin: 20px auto;
+      padding: 10px;
+      background: #121212;
+      border: 1px dashed #333;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 350px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>CashFlow Mastery 2.0 💸</h1>
+  <h2>Unlock the Secret Formula to Easy Online Money</h2>
+
+  <!-- AdSense Placeholder -->
+  <div class="ad-box">
+    [Your AdSense Code Here] <br>
+    (Ad will appear here)
+  </div>
+
+  <div class="bar-container">
+    <div class="bar" id="bar"></div>
+  </div>
+
+  <div class="message" id="message">Initializing secret course content...</div>
+
+  <div class="popup" id="popup">
+    <h2>🤣 GOTCHA!</h2>
+    <p>Congratulations! You just <strong> wasted 1min 40s </strong> waiting for easy money. Imagine what you could build if you invested that same time every day into learning a real skill<br><br>
+    Ready for the actual<strong> secret? </strong>Replace 'How can I make easy money?' with 'What valuable problem can I solve?' Your bank account will thank you.<br>
+    Hard work > Fake courses.<br><br>
+    Achievement unlocked: <em>Certified Gullible Friend</em> 🏆</p>
+    <p>👉 Share this page with your stupid friends who believe in get-rich-quick BS!</p>
+    <button onclick="location.reload()">Trolled? Try Again 🤡</button>
+  </div>
+
+  <script>
+    const bar = document.getElementById("bar");
+    const msg = document.getElementById("message");
+    const popup = document.getElementById("popup");
+
+    const messages = [
+      "Loading millionaire secrets...",
+      "Optimizing passive income streams...",
+      "Calibrating your Lamborghini delivery...",
+      "Bank servers syncing with your account...",
+      "Crypto investments auto-generating profits...",
+      "Halfway to rich life 💰...",
+      "Finalizing withdrawal setup...",
+      "Almost there... don’t blink 👀",
+      "99% ready… your rich life begins now..."
+    ];
+
+    let width = 0;
+    let step = 0;
+
+    function slowLoad() {
+      if (width < 100) {
+        width += 1;
+        bar.style.width = width + "%";
+
+        // Change message at certain points
+        if (width % 12 === 0 && step < messages.length) {
+          msg.textContent = messages[step];
+          step++;
+        }
+
+        // Adjust speed: fast start, slower middle, super slow end
+        let delay;
+        if (width < 30) {
+          delay = 200;  // fast
+        } else if (width < 70) {
+          delay = 1000; // slow
+        } else {
+          delay = 1200; // super slow
+        }
+
+        setTimeout(slowLoad, delay);
+      } else {
+        msg.textContent = "🎊 Completed!";
+        popup.style.display = "block";
+      }
+    }
+
+    slowLoad();
+  </script>
+</body>
+</html>
